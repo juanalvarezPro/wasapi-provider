@@ -1,0 +1,63 @@
+{
+  "name": "@laiyon/wasapi-provider",
+  "version": "0.1.0",
+  "description": "provider wasapi builderbot",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./provider": {
+      "types": "./dist/types/provider/index.d.ts",
+      "import": "./dist/esm/provider/index.js",
+      "require": "./dist/cjs/provider/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --no-ignore",
+    "dev": "npm run lint && nodemon ./src/app.ts",
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "wasapi",
+    "whatsapp",
+    "sdk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanalvarezPro/wasapi-sdk"
+  },
+  "dependencies": {
+    "@builderbot/bot": "^1.2.9",
+    "@laiyon/wasapi-sdk": "^0.1.14"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "dotenv": "^17.2.1",
+    "eslint": "^8.52.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.0",
+    "rollup": "^4.10.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "author": "juanalvarez.pro",
+  "license": "ISC"
+}
