@@ -13,12 +13,13 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "builderbot"],
+    "plugins": ["@typescript-eslint"],
     "rules": {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/no-var-requires": "off",
       "no-unsafe-optional-chaining": "off"
     }
   }

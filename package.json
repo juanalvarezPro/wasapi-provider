@@ -37,11 +37,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juanalvarezPro/wasapi-sdk"
+    "url": "git+https://github.com/juanalvarezPro/wasapi-provider"
   },
   "dependencies": {
     "@builderbot/bot": "^1.2.9",
-    "@laiyon/wasapi-sdk": "^0.1.14"
+    "@laiyon/wasapi-sdk": "^0.1.15"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
