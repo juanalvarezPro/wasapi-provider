@@ -54,6 +54,11 @@ export class WasapiEvents extends EventEmitterClass<ProviderEventTypes> {
 
         if (payload.data.type !== "in" || payload.data.wa_id.includes("g.us")) return;
 
+        // Mostrar el payload completo en consola
+        console.log('\n📩 MENSAJE RECIBIDO:');
+        console.log(JSON.stringify(payload, null, 2));
+        console.log('');
+
         const sendObj = {
             body: payload.data.message || "",
             from: payload.data.wa_id, // Número que envía
