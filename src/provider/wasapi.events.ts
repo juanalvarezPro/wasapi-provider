@@ -54,11 +54,6 @@ export class WasapiEvents extends EventEmitterClass<ProviderEventTypes> {
 
         if (payload.data.type !== "in" || payload.data.wa_id.includes("g.us")) return;
 
-        // Mostrar el payload completo en consola
-        console.log('\n📩 MENSAJE RECIBIDO:');
-        console.log(JSON.stringify(payload, null, 2));
-        console.log('');
-
         const sendObj = {
             body: payload.data.message || "",
             from: payload.data.wa_id, // Número que envía
@@ -72,6 +67,11 @@ export class WasapiEvents extends EventEmitterClass<ProviderEventTypes> {
         if (payload.data.message_type === 'document') sendObj.body = utils.generateRefProvider('_event_document_')
         if (payload.data.message_type === 'audio') sendObj.body = utils.generateRefProvider('_event_voice_note_')
         if (payload.data.message_type === 'location') sendObj.body = utils.generateRefProvider('_event_location_')
+
+        // Mostrar el objeto que se emite en lugar del payload crudo
+        console.log('\n📩 Menssage Emited:');
+        console.log(JSON.stringify(sendObj, null, 2));
+        console.log('');
 
         this.emit('message', sendObj)
     }
